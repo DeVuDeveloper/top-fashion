@@ -1,0 +1,113 @@
+<nav class="navbar-inner navbar navbar-fixed-top navbar--color--secondary navbar--size--md" data-startcolor="navbar--color--ghost" data-startsize="navbar--size--xl" data-intocolor="navbar--color--secondary" data-intosize="navbar--size--md">
+<div class="container">
+
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobileNav" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+  <%= link_to "GetFashion", root_path, :class => " brandphoto navbar-brand" %>
+</div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="mobileNav">
+  <ul class="nav navbar-nav">
+    <!-- <li><%= link_to "categories", categories_path %></li> -->
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <% if !@current_user.present? %>
+    <li>
+      <%= link_to "Men", shop_path(:gender => 'men'), :class => "blackfont"%>
+    </li>
+    <li>
+      <%= link_to "Women", shop_path(:gender => 'women'), :class => "blackfont"%>
+    </li>
+
+    <li><%= link_to "Join", new_user_path, :class => "blackfont" %></li>
+    <!-- <li><%= link_to "Sign in", login_path, :class => "blackfont" %></li> -->
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle blackfont" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+      <ul id="login-dp" class="dropdown-menu">
+      <li>
+        <div class="row">
+          <div class="col-md-12">
+            <%= form_tag login_path, :class => 'form', :id => 'login-nav' do %>
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+              </div>
+              <div class="form-group">
+                 <label class="sr-only" for="exampleInputPassword2">Password</label>
+                 <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+              </div>
+              <div class="form-group">
+                 <button id="btn-login" type="submit" class="btn btn-primary btnborder btn-block">Sign in</button>
+              </div>
+            <% end %>
+          </div>
+         </div>
+        </li>
+      </ul>
+    </li>
+
+    <% end %>
+
+    <% if @current_user.present? %>
+      <li>
+        <%= link_to "Men", shop_path(:gender => 'men'), :class => "blackfont"%>
+      </li>
+      <li>
+        <%= link_to "Women", shop_path(:gender => 'women'), :class => "blackfont"%>
+      </li>
+
+      <li class=" dropdown">
+        <a href="#" class="blackfont dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= "#{@current_user.name}" %>
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu" >
+          <li ><%= link_to "Wishlist", wishlist_path, :id=>"drop" %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Edit profile", edit_user_path(@current_user.id), :id=>"drop" %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Logout", login_path, :method => 'delete', :id=>"drop" %></li>
+        </ul>
+      </li>
+    <% end %>
+
+    <% if @current_user.present? %>
+    <% if @current_user.admin %>
+        <li class=" dropdown">
+          <a href="#" class=" blackfont dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "All Products", products_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "New Product", new_product_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "All Categories", categories_path %></li>
+          <li role="separator" class="divider"></li>
+
+          <li><%= link_to "New Category", new_category_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Orders", orders_path %></li>
+        </ul>
+      </li>
+      <% end %>
+
+      <li >
+        <%= link_to order_path(:id => @order.id) do%><i id="cart-icon" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i><% end %>
+      </li>
+
+    <% end %>
+
+
+
+  </ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>

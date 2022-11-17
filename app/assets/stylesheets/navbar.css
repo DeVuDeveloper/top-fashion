@@ -1,0 +1,85 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+
+img.nav-avatar {
+  width: 30px;
+  height:30px;
+  border:1px solid #fff;
+  margin-right:10px;
+  border-radius: 50%;
+  ;
+}
+
+.nav > li > a:hover {
+  color:black;
+}
+
+.nav > li > a:selected {
+  color:black;
+}
+
+.navbar-brand, .navbar-nav > li > a {
+  line-height: 32px;
+}
+
+#bs-example-navbar-collapse-1 {
+  border:1px solid #111;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: white;
+}
+
+
+.navbar-default .navbar-brand{
+  color: white;
+}
+
+.navbar-default {
+  border-color: 1px solid #111;;
+
+}
+
+.filters {
+  margin: 0 10px 15px;
+  background: #fff;
+  text-align: left;
+  font-size: 14px;
+  display: inline-flex;
+  border-bottom: 1px solid black;
+}
+
+.box {
+  width: 100%;
+  margin: 21px 0;
+}
+
+.nav .box .filters .path {
+  text-align: center;
+}
+
+nav.dropdown:hover{
+  color:black;
+}
+
+#cart-icon{
+  color: white;
+}
+
+#btnborder:focus{
+  background-color: black;
+}
+
+#btnblack:focus {
+    background-color: black;
+}
+
+#btn-login:focus{
+  background-color: black;
+}
+
+#btn-login:focus:active{
+  background-color: black;
+}

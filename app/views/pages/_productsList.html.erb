@@ -1,0 +1,21 @@
+
+<div class="container">
+
+<% @products.each_slice(3) do |product| %>
+  <div class="row">
+    <% product.each do |prod| %>
+      <div class="col-xs-12 col-md-4 image-container" >
+        <%= link_to product_path(:id => prod.id) do %>
+          <div class="overlay" style="position:relative; text-align:center;">
+              <div class="image-box">
+                <%= cl_image_tag(prod.images[0], :class => 'img-responsive', :crop => :fill)  %>
+              </div>
+              <p> $<%= prod.cost %></p>
+              <p><%= prod.brand %> </p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,8 @@
+<%= form_tag '#', :id => "chat_form" do %>
+  <%= text_field_tag(
+      :question,
+      params[:question],
+      placeholder: "Whats on your mind?",
+      class: "form-control"
+  ) %>
+<% end %>

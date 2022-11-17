@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TopShop</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Get Fashions</title>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <!-- <%= cloudinary_js_config %> -->
+  <%= favicon_link_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <%= csrf_meta_tags %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+   <script type="text/javascript">
+
+   </script>
+
+</head>
+<body>
+
+
+
+<body class="<%= params[:controller] %> <%=params[:action]%>">
+
+<div class="wrapper">
+  <%= yield %>
+</div>
+
+<% unless current_page?(root_path) %>
+<h1 class="chat-header">Need help???<span class="hideChat">hide</span></h1>
+<div class="chat-window">
+  <div class="chat-history"></div>
+</div>
+<div class="chat-input">
+  <%= render :partial => "chatbot/chat" %>
+</div>
+<div class="showChat">
+  <i class="fa fa-comment-o" aria-hidden="true"></i> Need help???
+</div>
+<% end %>
+
+<div class='spacer'></div>
+
+</body>
 </html>
