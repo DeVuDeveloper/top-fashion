@@ -41,6 +41,7 @@ h3 {
   font-weight: 700;
   color: #4b4b4b;
 }
+
 /* ===================================== */
 /* ===== THE INTERESTING STUFF NOW ===== */
 /* ===================================== */
@@ -73,9 +74,7 @@ h3 {
 .navbar--color--primary {
   background: #37ca7e;
 }
-.navbar--color--secondary {
 
-}
 .navbar--color--ghost {
   background: rgba(0,0,0,0.2);
 }
