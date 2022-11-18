@@ -43,9 +43,9 @@
     </div>
 
     <div class='col-md-6'>
-        <% @product.images.each do |i| %>
-          <%= cl_image_tag i, :class=>"productListThumb"  %>
-        <% end %>
+     
+          <%= cl_image_tag(@product.attachment.key, :type => :upload, :class => "productListThumb")  %>
+       
     </div>
   </div>
 

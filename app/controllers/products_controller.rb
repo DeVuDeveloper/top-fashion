@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find params[:id]
     session[:prev_url]= request.referer
   end
 
@@ -22,12 +23,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if params[:product][:images].present?
-      params[:product][:images].each do |image|
-        req = Cloudinary::Uploader.upload(image)
-        @product.images << req["public_id"]
-      end
-    end
+  
     if @product.save
       flash[:create] = "Product created successfully"
       redirect_to products_path
@@ -41,14 +37,10 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if params[:product][:images].present?
-      params[:product][:images].each do |image|
-        req = Cloudinary::Uploader.upload(image)
-        @product.images << req["public_id"]
-      end
-    end
-
-    @product.update_attributes(product_params)
+ 
+    
+    @product = Product.new(product_params)
+    @product.update(product_params)
 
     if @product.save
       flash[:create] = "Product updated successfully"
@@ -61,7 +53,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
-      redirect_to :back
+      
     else
       redirect_to session.delete(:prev_url)
     end
@@ -79,7 +71,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :cost, :size, :color, :gender, :brand, :info, :category_ids)
+    params.require(:product).permit(:name, :cost, :size, :color, :gender, :brand, :info, :attachment, :category_ids)
   end
 
 end

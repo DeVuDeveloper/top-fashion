@@ -31,8 +31,8 @@
   <%= f.text_field :info, :required => true, :class=>"form-control textfield-border" %>
 </div>
 <div class="form-group">
-  *<%= f.label :images %>
-  <%= f.file_field :images, :multiple => true, :class=>"form-control textfield-border" %>
+  *<%= f.label :attachment %>
+  <%= f.file_field :attachment, direct_upload: true, :class=>"form-control textfield-border" %>
 </div>
 <div class="form-group">
     *<%= f.label :gender %>

@@ -85,5 +85,5 @@ gem 'rails_12factor'
 gem 'cloudinary'
 gem 'stripe'
 gem 'api-ai-ruby'
-
+gem 'image_processing', '~> 1.2'
 

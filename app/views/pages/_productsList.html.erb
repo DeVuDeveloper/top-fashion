@@ -8,7 +8,7 @@
         <%= link_to product_path(:id => prod.id) do %>
           <div class="overlay" style="position:relative; text-align:center;">
               <div class="image-box">
-                <%= cl_image_tag(prod.images[0], :class => 'img-responsive', :crop => :fill)  %>
+                <%= cl_image_tag(prod.attachment.key, :type => :upload, :class => 'img-responsive', :crop => :fill)  %>
               </div>
               <p> $<%= prod.cost %></p>
               <p><%= prod.brand %> </p>
