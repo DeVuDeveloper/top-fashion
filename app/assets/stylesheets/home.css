@@ -304,6 +304,10 @@ body.home .slideshow__nav .btn:nth-child(4) {
   color: #fff;
 }
 
+.banner {
+  height: 780px;
+}
+
 .mirror {
   width: 60vw;
   max-width: 1100px;
