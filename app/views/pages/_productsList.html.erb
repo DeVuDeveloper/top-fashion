@@ -10,8 +10,10 @@
               <div class="image-box">
                 <%= cl_image_tag(prod.attachment.key, :type => :upload, :class => 'img-responsive', :crop => :fill)  %>
               </div>
+              <p><%= prod.info %> </p>
               <p> $<%= prod.cost %></p>
               <p><%= prod.brand %> </p>
+              
           </div>
         <% end %>
       </div>

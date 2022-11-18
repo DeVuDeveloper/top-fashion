@@ -154,10 +154,10 @@ body.home .slideshow__nav {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	align-items: flex-end;
-	bottom: 0;
-	right: 0;
-	padding: 0 2em 1em;
+	align-items: center;
+	
+	right: 47%;
+	
 	overflow: hidden;
 }
 
