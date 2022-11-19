@@ -19,7 +19,11 @@
 
 </head>
 <body>
-
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 
 
 <body class="<%= params[:controller] %> <%=params[:action]%>">
@@ -42,6 +46,7 @@
 <% end %>
 
 <div class='spacer'></div>
+
 
 </body>
 </html>

@@ -99,13 +99,11 @@
         </ul>
       </li>
       <% end %>
-      <li>
+      <li class="fa-stack fa has-badge" data-count=<%= LineItem.all.size%>>
         <%= link_to order_path(:id => @order.id) do%><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i><% end %>
       </li>
-
     <% end %>
-
-  </ul>
+    </ul>
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
