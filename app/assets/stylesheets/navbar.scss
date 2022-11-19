@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
-
 img.nav-avatar {
   width: 30px;
   height:30px;
@@ -13,11 +12,11 @@ img.nav-avatar {
 }
 
 .nav > li > a:hover {
-  color:black;
+  color:rgb(190, 183, 183);
 }
 
 .nav > li > a:selected {
-  color:black;
+  color:rgb(172, 164, 164);
 }
 
 .navbar-brand, .navbar-nav > li > a {
@@ -25,7 +24,7 @@ img.nav-avatar {
 }
 
 #bs-example-navbar-collapse-1 {
-  border:1px solid #111;
+  border:1px solid rgb(158, 154, 154);
 }
 
 .navbar-default .navbar-nav > li > a{
@@ -38,17 +37,18 @@ img.nav-avatar {
 }
 
 .navbar-default {
-  border-color: 1px solid #111;;
+  border-color: 1px solid rgb(177, 172, 172);;
 
 }
 
 .filters {
-  margin: 0 10px 15px;
-  background: #fff;
+  margin: 0;
+  background: rgb(29, 28, 29);
   text-align: left;
   font-size: 14px;
+  color: white;
   display: inline-flex;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(15, 15, 15);
 }
 
 .box {
@@ -58,10 +58,11 @@ img.nav-avatar {
 
 .nav .box .filters .path {
   text-align: center;
+  color:rgb(177, 173, 173)
 }
 
 nav.dropdown:hover{
-  color:black;
+  color:rgb(187, 178, 178);
 }
 
 #cart-icon{
@@ -69,22 +70,27 @@ nav.dropdown:hover{
 }
 
 #btnborder:focus{
-  background-color: black;
+  background-color: rgb(214, 208, 208);
 }
 
-#btnblack:focus {
-    background-color: black;
+#btnblack {
+    background-color: transparent;
+    color: rgb(184, 179, 179);
+
+}
+#btnblack:active {
+  color: rgb(230, 223, 223);
 }
 
 #btn-login:focus{
-  background-color: black;
+  background-color: rgb(168, 165, 165);
 }
 
 #btn-login:focus:active{
-  background-color: black;
+  background-color: rgb(221, 216, 216);
 }
 
-$shopping-cart-red: #141313;
+$shopping-cart-red: #8b8585;
 
 .fa-stack[data-count]:after{
   position:absolute;
@@ -104,11 +110,11 @@ $shopping-cart-red: #141313;
   border-style:solid;
 }
 .fa-circle {
-  color:#1b1a1a;
+  color:#968d8d;
 }
 
 .red-cart {
-	color: #1d1b1b; background:transparent;
+	color: #969090; background:transparent;
 }
 
 .nav>li>a {
@@ -116,8 +122,10 @@ $shopping-cart-red: #141313;
   background-color: transparent !important;
   color: rgb(163, 158, 158);
 }
+
 .nav>li>a:focus, .nav>li>a:hover, .nav>li>a:active  {
   text-decoration: none;
   background-color: transparent !important;
   color: rgb(236, 232, 232);
 }
+

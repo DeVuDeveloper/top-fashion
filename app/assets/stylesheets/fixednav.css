@@ -84,7 +84,7 @@ h3 {
 }
 
 .blackfont {
-  color: black;
+  color: rgb(192, 187, 187);
 }
 /*
  NavBar Inner
@@ -106,7 +106,7 @@ h3 {
 }
 
 .navbar-inner .blackfont{
-  color: rgb(180, 171, 171);
+  color: rgb(187, 179, 179);
 }
 .wrapper{
   margin-top: 100px;
