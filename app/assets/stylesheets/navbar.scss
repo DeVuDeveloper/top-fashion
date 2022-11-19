@@ -6,7 +6,7 @@
 img.nav-avatar {
   width: 30px;
   height:30px;
-  border:1px solid #fff;
+  border:1px solid rgb(201, 199, 199);
   margin-right:10px;
   border-radius: 50%;
   ;
@@ -29,12 +29,12 @@ img.nav-avatar {
 }
 
 .navbar-default .navbar-nav > li > a{
-  color: white;
+  color: rgb(214, 209, 209);
 }
 
 
 .navbar-default .navbar-brand{
-  color: white;
+  color: rgb(177, 172, 172);
 }
 
 .navbar-default {
@@ -109,4 +109,15 @@ $shopping-cart-red: #141313;
 
 .red-cart {
 	color: #1d1b1b; background:transparent;
+}
+
+.nav>li>a {
+  text-decoration: none;
+  background-color: transparent !important;
+  color: rgb(163, 158, 158);
+}
+.nav>li>a:focus, .nav>li>a:hover, .nav>li>a:active  {
+  text-decoration: none;
+  background-color: transparent !important;
+  color: rgb(236, 232, 232);
 }

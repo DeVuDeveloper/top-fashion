@@ -48,9 +48,8 @@ h3 {
 .navbar {
   border: none;
   transition: 0.4s;
-/* --- navbar sizes --- */
-/* --- navbar colors --- */
 }
+
 .navbar-brand {
   font-size: 2.25rem;
   font-weight: 900;
@@ -102,12 +101,12 @@ h3 {
 }
 
 .navbar-inner a{
-  color: #fff;
+  color: rgb(180, 171, 171);
 
 }
 
 .navbar-inner .blackfont{
-  color: #fff;
+  color: rgb(180, 171, 171);
 }
 .wrapper{
   margin-top: 100px;
