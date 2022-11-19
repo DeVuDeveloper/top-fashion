@@ -2,53 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url("https://fonts.googleapis.com/css?family=Lobster");
 
-
-@import url('https://fonts.googleapis.com/css?family=Lobster');
-
-
-.productListDiv{
+.productListDiv {
   display: inline-block;
   width: 300px;
   font-size: 10px;
   border: 1px solid #ccc;
 }
 
-.productListThumb{
-  width:470px;
+.productListThumb {
+  width: 470px;
   box-shadow: 10px 10px 5px #888888;
 }
 
-.navbar-default{
+.navbar-default {
   border-color: black;
 }
 
-
-.image-container .overlay{
+.image-container .overlay {
   position: relative;
-  background:rgba(0,0,0,.75);
+  background: rgba(0, 0, 0, 0.75);
   /*text-align:center;*/
   /*opacity:0;*/
-  -webkit-transition: opacity .25s ease;
+  -webkit-transition: opacity 0.25s ease;
 }
 
 .image-container .image-container:hover .overlay {
-               opacity:1;}
+  opacity: 1;
+}
 
 .image-container .overlay-title {
-  font-family:Helvetica;
-  font-weight:900;
-  color:rgba(215,2,64,.7);
-  font-size:36px;
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(215, 2, 64, 0.7);
+  font-size: 36px;
   width: 100%;
   text-align: center;
   line-height: 375px;
 }
 
-div.col-xs-12.col-md-4.image-container{
+div.col-xs-12.col-md-4.image-container {
   padding-top: 22px;
 }
-div.col-xs-12.col-md-4.image-container a{
+div.col-xs-12.col-md-4.image-container a {
   padding-right: 5px;
   z-index: 999999;
 }
@@ -59,15 +56,15 @@ div.col-xs-12.col-md-4.image-container a{
   overflow: hidden;
 }
 
-img.img-responsive{
+img.img-responsive {
   width: 302px;
   max-width: 302px;
   height: 453px;
 
   -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-     -ms-transition: all 1s ease;
-         transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .image-container:hover img.img-responsive {
@@ -76,111 +73,107 @@ img.img-responsive{
   height: 480px;
 }
 
-
 div.overlay {
   color: black;
   width: 312px;
 }
 
-.image-container .overlay{
+.image-container .overlay {
   background: rgba(0, 0, 0, 0.03);
   padding: 26px;
 }
 .la {
- justify-content: center;
+  justify-content: center;
 }
 
-
-
-
-input.btn.btn-primaryshow{
+input.btn.btn-primaryshow {
   justify-content: center;
   width: 153px;
   top: -57px;
   left: 384px;
 }
 
-input.btn.btn-primary{
+input.btn.btn-primary {
   justify-content: center;
   width: 153px;
 }
 
-.btnborder{
+.btnborder {
   border: 1px solid #6b6b6b;
-  }
+}
 
-.btnshowborder{
+.btnshowborder {
   border: 1px solid #6b6b6b;
   top: 40px;
-  }
+}
 
-  .form-groupshow {
-      margin-bottom: -57px;
-  }
+.form-groupshow {
+  margin-bottom: -57px;
+}
 
+.btn-primary:hover {
+  border-color: #000;
+}
+a.dropdown_toggle:hover {
+  color: black;
+}
 
-  .btn-primary:hover {
-    border-color: #000;
-  }
-  a.dropdown_toggle:hover {
-    color:black;
-  }
+.blackfont:hover {
+  color: black;
+}
 
-  .blackfont:hover{
-    color:black;
-  }
+.nav .open > a:focus {
+  color: black;
+}
 
-  .nav .open > a:focus {
-    color: black;
-  }
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  color: black;
+}
 
-  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    color:black;
-  }
+#drop:hover {
+  color: black;
+}
 
-  #drop:hover{
-    color:black;
-  }
-
-
-  textarea.form-control{
-    height: auto;
-    width: 352px;
-  }
+textarea.form-control {
+  height: auto;
+  width: 352px;
+}
 
 //Moving home page image up
-.homepage-top-margin{
+.homepage-top-margin {
   margin-top: -2em;
 }
 
-#homebtn:hover{
+#homebtn:hover {
   background: none;
 }
 
-.btnblack:focus{
+.btnblack:focus {
   background-color: black;
 }
 
-.btnblack:active{
+.btnblack:active {
   background-color: black;
 }
 
-.btnblack:active:hover{
+.btnblack:active:hover {
   background-color: black;
 }
 
-.btnblack:hover{
-  color:white;
+.btnblack:hover {
+  color: white;
 }
 
-.login-field{
+.login-field {
   margin: 1em;
 }
 
-input.btn.btn-primary.loginbtn{
+input.btn.btn-primary.loginbtn {
   width: 98%;
 }
 
-.spacer{
+.spacer {
   height: 8em;
 }
