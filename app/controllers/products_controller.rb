@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @user = @current_user
     @product = Product.find params[:id]
     session[:prev_url]= request.referer
   end

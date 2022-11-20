@@ -1,73 +1,88 @@
-
 <%=  render :partial => 'layouts/navbarInner' %>
 
 
-<div class="container">
-  <div class="row">
-    <div class='col-md-6'>
-      <% if @current_user.admin %>
-        <div class = "adminProductsShow">
-          <%= link_to "Edit", edit_product_path(@product.id), :class=>"adminbtn btnblack btnborder btn btn-primary " %>
-          <%= link_to "Delete", product_path(@product.id), :method=>"delete",:class=>"adminbtn btnblack btnborder btn btn-primary " , :data=>{:confirm=>"Are you sure?"} %>
+<section class="product-container">
+ 
+  <!-- Left Column / Headphones Image -->
+  <div class="left-product">
+   <%= cl_image_tag(@product.attachment.key, :type => :upload )  %>
+  </div>
+ 
+  <div class="right-column">
+ 
+    <div class="product-description">
+      <span><h3><%= @product.name %></h3></span>
+      <h1><%= @product.brand %></h1>
+      <p>Hot Fashion Men′s Jeans Pants Printed Design Casual, Biker Badges Brushed Denim Pants Jeans</p>
+    </div>
+ 
+    <div class="product-configuration">
+ 
+      <div class="product-color">
+        <span>Color</span>
+ 
+        <div class="color-choose">
+          <div>
+            <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+            <label for="red"><span></span></label>
+          </div>
+          <div>
+            <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+            <label for="blue"><span></span></label>
+          </div>
+          <div>
+            <input data-image="black" type="radio" id="black" name="color" value="black">
+            <label for="black"><span></span></label>
+          </div>
         </div>
-      <% end %>
-      <h3><%= @product.name %></h3>
-      <br>
-      <p>Price : <span id="price"><%= number_to_currency(@product.cost)%></span></p>
-      <p>Designed by : <span class="green"><%= @product.brand %></span></p>
-      <p>Color : <span class="green"><%= @product.color %></span></p>
-      <br>
-      <p><%= @product.info %></p>
+ 
+      </div>
+ 
+     <div class="product-price">
+      <span><%= number_to_currency(@product.cost)%></span>
       <% if @current_user.present? %>
-        <div>
-          <% if flash[:error].present? %>
-            <p class="bg-danger"><%= flash[:error] %></p>
-          <% end %>
-          <% if flash[:msg].present? %>
-            <p class="bg-danger"><%= flash[:msg] %></p>
-          <% end %>
-          <%= link_to "Add to Cart", product_line_items_path(product_id: @product.id), :method=>"post", :class=>"btnblack btnborder btn btn-primary" %>
-        </div>
-        <div class="button-center">
+        <div class="buttons-wrapper">
+         <%= link_to "Add to Cart", product_line_items_path(product_id: @product.id), :method=>"post", :class=>"product-btn-add" %>
+      
+
           <% if @current_user.already_likes?(@product) %>
             <%= link_to "Remove from Wishlist", product_favourite_path(:product_id=>@product.id, :user_id=>@current_user.id),
-                                  :method=>"delete", :class=>"btnblack btnborder btn btn-primary "%>
+                                  :method=>"delete", :class=>"product-btn-add "%>
           <% else %>
 
             <%= link_to "Add to Wishlist", product_favourites_path(:product_id=>@product.id, :user_id=>@current_user.id),
-                                  :method=>"post", :class=>"btnblack btnborder btn btn-primary " %>
+                                  :method=>"post", :class=>"product-btn-add " %>
 
           <% end %>
         </div>
         <% end %>
     </div>
-
-    <div class='col-md-6'>
-     
-          <%= cl_image_tag(@product.attachment.key, :type => :upload, :class => "productListThumb")  %>
-       
-    </div>
   </div>
 
-  <div>
-    <h4><strong>Reviews</strong></h4>
-    <% if @current_user.present? %>
+     <div class="cable-config">
+   <h4><strong>Reviews</strong></h4>
+     <% if @current_user.present? %>
       <%= form_for([@product, @product.reviews.build]) do |f| %>
         <%= hidden_field_tag :user_id, @current_user.id %>
-        <div class="form-groupshow">
+        <div class="form-review">
           <% if flash[:review_error].present? %>
             <p class="bg-danger"><%= flash[:review_error] %></p>
           <% end %>
-          <%= f.text_area :desc, :class=>"form-control textfield-border"  %>
-          <%= f.submit 'Add Review', :class=>"btnblack btnshowborder btn btn-primaryshow" %>
+          <%= f.text_area :desc, :class=>"form-control review-text"  %>
+          <%= f.submit 'Add Review', :class=>"product-btn-add btn" %>
         </div>
       <% end %>
     <% end %>
+    <div class="review-text">
     <% @product.reviews.each do |review| %>
       <p><i class="fa fa-comment-o" aria-hidden="true"></i>
-        <%= review.desc %>
+        <%= @user.name%>: <%= review.desc %>
       </p>
     <% end %>
-  </div>
+    </div>
+    </div>
 
-</div>
+    </div>
+</section>
+
+
