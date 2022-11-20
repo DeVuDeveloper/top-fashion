@@ -33,7 +33,7 @@ before_action :set_order, only: [:create]
   def destroy
     @item = LineItem.find params[:id]
     @item.destroy
-    redirect_to :back
+    redirect_to root_path
   end
 
   private

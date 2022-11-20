@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
     @amount = @order.total_cost
 
     if @amount == 0
-      redirect_to :back
+      redirect_to root_path
     end
   end
 
@@ -41,9 +41,6 @@ class ChargesController < ApplicationController
 
 
 def index
-  # @order = Order.find params[:order_id]
-  # @amount = @order.total_cost
-
   @order = Order.find params[:order_id]
   @order.status = true
   @order.save
