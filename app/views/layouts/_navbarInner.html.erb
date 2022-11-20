@@ -15,19 +15,18 @@
 
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="mobileNav">
-  <ul class="nav navbar-nav">
-    <!-- <li><%= link_to "categories", categories_path %></li> -->
-  </ul>
   <ul class="nav navbar-nav navbar-right">
 
     <% if !@current_user.present? %>
-    <li>
+     <li class="<%= is_active?(shop_path(:gender => 'men')) %>">
       <%= link_to "Men", shop_path(:gender => 'men'), :class => "blackfont"%>
     </li>
-    <li>
+    <li class="<%= is_active?(shop_path(:gender => 'women')) %>">
       <%= link_to "Women", shop_path(:gender => 'women'), :class => "blackfont"%>
     </li>
-    <li><%= link_to "Join", new_user_path, :class => "blackfont" %></li>
+     <li class="<%= is_active?(new_user_path) %>">
+    <%= link_to "Join", new_user_path, :class => "blackfont" %>
+    </li>
 
     <li class="dropdown">
       <a href="#" class="dropdown-toggle blackfont" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
@@ -53,20 +52,22 @@
         </li>
       </ul>
     </li>
-
-    <% end %>
-
-
+  <% end %>
 
     <% if @current_user.present? %>
-      <li>
+
+     
+     <li class="<%= is_active?(shop_path(:gender => 'men')) %>">
         <%= link_to "Men", shop_path(:gender => 'men'), :class => "blackfont"%>
       </li>
-      <li>
+
+      <li class="<%= is_active?(shop_path(:gender => 'women')) %>">                                                    
         <%= link_to "Women", shop_path(:gender => 'women'), :class => "blackfont"%>
       </li>
-      <li class=" dropdown">
-        <a href="#" class="blackfont dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+     
+        <li>  
+        <a href="#" class="blackfont main-class dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <%= "#{@current_user.name}" %>
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -99,7 +100,7 @@
         </ul>
       </li>
       <% end %>
-      <li class="fa-stack fa has-badge" data-count=<%= LineItem.all.size%>>
+      <li class="fa-stack fa has-badge <%= is_active?(order_path(:id => @order.id)) %>" data-count=<%= LineItem.all.size%>>
         <%= link_to order_path(:id => @order.id) do%><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i><% end %>
       </li>
     <% end %>

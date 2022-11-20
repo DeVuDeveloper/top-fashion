@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Bad+Script");
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
+body {
+  font-family: "Lato", Arial, sans-serif;
+  color: #6b6b6b;
+  font-size: 17px;
+  line-height: 1.6;
+}
+y {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.main-content {
+  background: #f2f2f2;
+}
+section {
+}
+
+section:nth-child(even) {
+  background: #f5f5f5;
+}
+h2,
+h3 {
+  padding: 2rem 0 0.75rem;
+  font-weight: 700;
+  color: #4b4b4b;
+}
+
+.blackfont {
+  color: rgb(192, 187, 187);
+}
+$shopping-cart-red: #8b8585;
+
+.fa-stack[data-count]:after {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  content: attr(data-count);
+  font-size: 40%;
+  padding: 0.6em;
+  border-radius: 999px;
+  line-height: 0.5em;
+  color: white;
+  color: $shopping-cart-red;
+  text-align: center;
+  min-width: 1em;
+  font-weight: bold;
+  background: white;
+  border-style: solid;
+}
+.fa-circle {
+  color: #968d8d;
+}
+
+.red-cart {
+  color: #969090;
+  background: transparent;
+}
+
+.brandphoto {
+  font-family: "Bad Script", cursive;
+  font-size: 37px;
+}
+
+.navbar-inner {
+  background: #111 !important;
+  color: #fff !important;
+  padding: 14px;
+}
+
+.navbar-inner a {
+  color: rgb(180, 171, 171);
+}
+
+.navbar-inner .blackfont {
+  color: rgb(187, 179, 179);
+}
+.wrapper {
+  margin-top: 90px;
+}
+
+.dropdown-menu {
+  min-width: 230px;
+  padding: 0.5em;
+}
+
+#login-dp {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#login-window {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#btn-login {
+  color: white;
+}

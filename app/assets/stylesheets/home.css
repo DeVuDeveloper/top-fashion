@@ -150,6 +150,7 @@ body.home .slideshow__nav {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  top: 10px;
   right: 47%;
   overflow: hidden;
 }
@@ -402,7 +403,7 @@ body.home .slideshow__nav .btn:nth-child(4) {
 
 img.banner {
   width: 100%;
-  margin: -20px auto;
+  margin: -14px 0 11px 0;
 }
 
 #price {

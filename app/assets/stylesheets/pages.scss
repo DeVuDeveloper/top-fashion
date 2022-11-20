@@ -1,11 +1,4 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-
 @import url('https://fonts.googleapis.com/css?family=Lobster');
-
 
 .productListDiv{
   display: inline-block;
@@ -76,7 +69,6 @@ img.img-responsive{
   height: 480px;
 }
 
-
 div.overlay {
   color: rgb(184, 179, 179);
   width: 312px;
@@ -90,10 +82,7 @@ div.overlay {
  justify-content: center;
 }
 
-
-
-
-input.btn.btn-primaryshow{
+ input.btn.btn-primaryshow{
   justify-content: center;
   width: 153px;
   top: -57px;
