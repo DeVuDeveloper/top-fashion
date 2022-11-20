@@ -5,7 +5,7 @@
  
   <!-- Left Column / Headphones Image -->
   <div class="left-product">
-   <%= cl_image_tag(@product.attachment.key, :type => :upload )  %>
+   <%= cl_image_tag(@product.attachment.key, :type => :upload, class: "active" )  %>
   </div>
  
   <div class="right-column">
@@ -18,7 +18,7 @@
  
     <div class="product-configuration">
  
-      <div class="product-color">
+     <div class="product-color">
         <span>Color</span>
  
         <div class="color-choose">
@@ -35,6 +35,7 @@
             <label for="black"><span></span></label>
           </div>
         </div>
+ 
  
       </div>
  
@@ -84,5 +85,19 @@
 
     </div>
 </section>
+
+<script>
+$(document).ready(function() {
+ 
+  $('.color-choose input').on('click', function() {
+      var productColor = $(this).attr('data-image');
+ 
+      $('.active').removeClass('active');
+      $('.left-product img[data-image = ' + productColor + ']').addClass('active');
+      $(this).addClass('active');
+  });
+ 
+});
+</script>
 
 
