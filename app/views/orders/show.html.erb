@@ -1,47 +1,42 @@
-
 <%=  render :partial => 'layouts/navbarInner' %>
 
-<div class="container">
-  <h2>Your Cart</h2>
-  <table class="table">
+    <div class="CartContainer">
+   	   <div class="Header">
+   	   	<h3 class="Heading">Shopping Cart</h3>
+   	   	<h5 class="Action"><%= link_to 'Empty cart', @order, method: :delete, data: {confirm: 'Are you sure you want to empty your cart?'}, :class=>"remove" %></h5>
+   	   </div>
+   <% @customer_order.line_items.each do |item| %>
+   	   <div class="Cart-Items">
+   	   	  <div class="image-box">
+            <%= cl_image_tag(item.product.attachment.key, :style => "height:150px") %>
+   	   	  </div>
 
-    <tr>
-      <td> </td>
-      <td>Product</td>
-      <td>Size</td>
-      <td>Unit Price</td>
-      <td>Quantity</td>
-      <td>Total Price</td>
-      <td> </td>
-    </tr>
-
-
-    <% @customer_order.line_items.each do |item| %>
-      <tr>
-        <td><%= cl_image_tag(item.product.attachment.key, :style => "height:150px") %></td>
-        <td><%= item.product.name %></td>
-        <td><%= item.product.size %></td>
-        <td><%= number_to_currency(item.product.cost) %></td>
-        <td><%= item.quantity %></td>
-        <td><%= number_to_currency(item.quantity * item.product.cost) %></td>
-        <td><%= link_to 'x', lineitem_destroy_path(item.id), :method => 'delete' %></td>
-      </tr>
-    <% end %>
-
-    <tr>
-      <td colspan="5" ></td>
-      <td colspan="2" class="totalCost"><%= number_to_currency(@order.total_cost) %></td>
-    </tr>
-
-  </table>
-
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <%= link_to "Checkout", new_order_charge_path(:order_id => @order.id), :class=>"btnborder btn btn-primary"%>
-      <%= link_to 'Empty cart', @order, method: :delete, data: {confirm: 'Are you sure you want to empty your cart?'}, :class=>"btnborder btn btn-primary " %>
-    </div>
-    <div class="col-md-4"></div>
-  </div>
-
-</div>
+   	   	  <div class="about">
+       
+   	   	  	<h1 class="title"><%= item.product.name %></h1>
+   	   	  	<h3 class="subtitle"><%= item.product.size %></h3>
+   	   	  	<%# <img src="images/veg.png" style={{ height="30px" }}/> %>
+   	   	  </div>
+   	   	  <div class="counter">
+   	   	  	<div class="order-btn">+</div>
+   	   	  	<div class="count"><%= item.quantity %></div>
+   	   	  	<div class="order-btn">-</div>
+   	   	  </div>
+   	   	  <div class="prices">
+   	   	  	<div class="amount"><%= number_to_currency(item.product.cost) %></div>
+   	   	  	<div class="save"><u>Save for later</u></div>
+   	   	  	<div class="remove"><u><%= link_to 'Remove', lineitem_destroy_path(item.id), :method => 'delete' %></u></div>
+   	   	  </div>
+          </div>
+<% end %>
+   	 <hr> 
+   	 <div class="checkout">
+   	 <div class="total">
+   	 	<div>
+   	 		<div class="Subtotal">Sub-Total</div>
+   	 		<div class="items"><%= LineItem.all.size%> items</div>
+   	 	</div>
+   	 	<div class="total-amount"><%= number_to_currency(@order.total_cost) %></div>
+   	 </div>
+   	 <button class="button"><%= link_to "Checkout", new_order_charge_path(:order_id => @order.id) %></button></div>
+   </div>
