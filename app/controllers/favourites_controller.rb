@@ -8,8 +8,9 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    favourite = Favourite.find_by(user_id: @current_user.id, product_id: params[:product_id])
+    @product = Product.find params[:id]
+    favourite = Favourite.find_by(user_id: @current_user.id, product_id: @product.id)
     favourite.destroy
-    redirect_to product_path(params[:product_id])
+    redirect_to root_path
   end
 end

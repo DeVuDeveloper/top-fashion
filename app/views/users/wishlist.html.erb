@@ -22,7 +22,7 @@
    	   	  </div>
    	   	  <div class="prices">
    	   	  	<div class="amount"><%= number_to_currency(item.product.cost) %></div>
-   	   	  	<div class="remove-b"><%= link_to 'Remove', lineitem_destroy_path(item.id), :method => 'delete' %></div>
+   	   	  	<div class="remove-b"><%= link_to 'Remove', product_favourite_path(:id, item.product[:id]), :method => 'delete' %></div>
    	   	  </div>
           </div>
 <% end %>
