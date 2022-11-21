@@ -1,0 +1,19 @@
+<% @products.each_slice(3) do |product| %>
+<div class="card-wrapper">
+ <% product.each do |prod| %>
+  <div class="outer">
+		<div class="card-content animated fadeInLeft">
+			<span class="bg animated fadeInDown"><%= prod.name.upcase %></span>
+			<h1><%= prod.info %> </h1>
+			<p><%= prod.brand %></p>
+			
+			<div class="card-button">
+				<a>$<%= prod.cost %></a>
+        <a class="cart-btn" href=<%="/products/#{prod.id}"%>><i class="cart-icon ion-bag"></i>SEE MORE</a>
+			</div>
+			</div>
+		<%= cl_image_tag(prod.attachment.key, :type => :upload, :class => 'img-responsive, card-img', :crop => :fill)  %>
+	</div>
+<% end %>
+  </div>
+<% end %>

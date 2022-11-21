@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TopShop</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Get Fashions</title>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= favicon_link_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <%= csrf_meta_tags %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+
+   <script type="text/javascript">
+
+   </script>
+</head>
+<body>
+
+<body class="<%= params[:controller] %> <%=params[:action]%>">
+
+<div class='spacer'></div>
+  <div>
+  <% if notice %>
+    <h6 class="alert alert-success text-center msg"><%= flash[:notice]%></h6>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger text-center msg"><%= alert %></p>
+  <% end %>
+  </div>
+
+<script type="text/javascript">
+    window.__be = window.__be || {};
+    window.__be.id = "637b24ef6fd6ba0007e2d43c";
+    (function() {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+</script>
+<!-- End of ChatBot code -->
+<%= yield %>
+</body>
 </html>

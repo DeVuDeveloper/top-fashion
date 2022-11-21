@@ -1,0 +1,28 @@
+<%=  render :partial => 'layouts/navbarInner' %>
+
+    <div class="CartContainer">
+   	   <div class="Header">
+   	   	<h3 class="Heading">Wishlist</h3>
+   	   </div>
+  <% @current_user.favourites.each do |item| %>
+
+   	   <div class="Cart-Items">
+   	   	  <div class="image-box">
+            <%= cl_image_tag(item.product.attachment.key, :style => "height:150px") %>
+   	   	  </div>
+
+   	   	  <div class="about">
+       
+   	   	  	<h1 class="title"><%= item.product.name %></h1>
+   	   	  	<h3 class="subtitle"><%= item.product.size %></h3>
+   	   	  	<%# <img src="images/veg.png" style={{ height="30px" }}/> %>
+   	   	  </div>
+   	   	  <div class="counter">
+   	   	  	<h3 class="subtitle"><%= item.product.color%></h3>
+   	   	  </div>
+   	   	  <div class="prices">
+   	   	  	<div class="amount"><%= number_to_currency(item.product.cost) %></div>
+   	   	  	<div class="remove-b"><%= link_to 'Remove', product_favourite_path(:id, item.product[:id]), :method => 'delete' %></div>
+   	   	  </div>
+          </div>
+<% end %>

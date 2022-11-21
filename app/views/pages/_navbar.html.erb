@@ -1,0 +1,10 @@
+
+    <nav class=" low-bar m-0 p-0" role="complementary">
+      <% @categories.each do |category| %>
+      <ul class="category-link">
+      <li class="konj <%= is_active?(products_category_path(:category => category.name)) %>">
+      <%= link_to category.name.split.map(&:capitalize)*' ', products_category_path(:category => category.name) %>
+      <% end %>
+      </li>
+      </ul>  
+    </nav>

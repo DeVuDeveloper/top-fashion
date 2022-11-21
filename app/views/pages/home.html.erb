@@ -1,0 +1,71 @@
+<%=  render :partial => 'layouts/navbarHomepage' %>
+
+<div class="demo1 homepage-top-margin">
+  <main>
+<section class="content content--full">
+      
+      <div class="slideshow">
+        <div class="slide">
+          <div class="mirror" data-visible-area="0.85">
+            <div class="mirror__side mirror__side--one">
+              <%= image_tag "women10.jpg", :class => 'mirror__img' %>
+            </div>
+            <div class="mirror__side mirror__side--two">
+              <%= image_tag "women10.jpg", :class => 'mirror__img' %>
+            </div>
+          </div>
+          <h2 class="slide__title"><%= link_to "Women", shop_path(:gender => 'women')%></h2>
+
+        </div>
+        <div class="slide">
+          <div class="mirror" data-visible-area="0.8">
+            <div class="mirror__side mirror__side--one">
+              <%= image_tag "men11.jpg", :class => 'mirror__img' %>
+            </div>
+            <div class="mirror__side mirror__side--two">
+              <%= image_tag "men11.jpg", :class => 'mirror__img' %>
+            </div>
+          </div>
+            <h2 class="slide__title"><%= link_to "Men", shop_path(:gender => 'men')%></h2>
+        </div>
+     
+        <nav class="slideshow__nav">
+          <button id="homebtn" class=" btn btn--nav">Women</button>
+          <button id="homebtn" class=" btn btn--nav">Men</button>
+       
+        </nav>
+      </div><!-- /slideshow -->
+</section>
+  </main>
+
+  <script src="assets/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/anime.min.js"></script>
+  <script src="assets/mirrorFx.js"></script>
+  <script src="assets/slideshow.js"></script>
+  <script>
+  (function() {
+
+    function init() {
+      new Slideshow(document.querySelector('.slideshow'));
+    }
+
+    // Fake loading time..
+    var startTime = new Date().getTime();
+    imagesLoaded(document.querySelector('main'), function() {
+      var elapsed = new Date().getTime() - startTime,
+        initFn = function() {
+          document.body.classList.remove('loading');
+          setTimeout(init, 50);
+        };
+
+      if( elapsed > 2000) {
+        initFn();
+      }
+      else {
+        setTimeout(initFn, 1000);
+      }
+    });
+
+  })();
+  </script>
+</div>

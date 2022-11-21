@@ -1,0 +1,52 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+.nav>li>a {
+  text-decoration: none;
+  background-color: transparent !important;
+  color: rgb(163, 158, 158);
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  text-decoration: none;
+  background-color: transparent !important;
+  color: rgb(236, 232, 232);
+}
+
+.nav> .active > a{
+  color: rgb(243, 237, 237);
+}
+
+.low-bar {
+  background-color: #111;
+  padding: 20px;
+  margin-top: -57px;
+}
+
+.category-link {
+  list-style: none;
+  text-decoration: none;
+}
+
+.category-link>li> a {
+  color: rgb(155, 151, 151);
+  margin: 0;
+  padding: 0;
+}
+
+.konj {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.konj a:hover {
+  text-decoration: none;
+  color: rgb(248, 245, 245);
+}
+
+.category-link> .active > a{
+  color: rgb(248, 245, 245);
+}
