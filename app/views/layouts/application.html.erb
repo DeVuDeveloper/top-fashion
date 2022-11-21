@@ -3,7 +3,6 @@
 <head>
   <title>Get Fashions</title>
 
-  <!-- <%= cloudinary_js_config %> -->
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= favicon_link_tag %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -17,18 +16,12 @@
    <script type="text/javascript">
 
    </script>
-
 </head>
 <body>
 
-
-
 <body class="<%= params[:controller] %> <%=params[:action]%>">
-
-
-
-<% unless current_page?(root_path) %>
-<h1 class="chat-header">Need help???<span class="hideChat">hide</span></h1>
+  <% unless current_page?(root_path) %>
+<h1 class="chat-header"> Chat with us!<span class="hideChat">hide</span></h1>
 <div class="chat-window">
   <div class="chat-history"></div>
 </div>
@@ -36,7 +29,7 @@
   <%= render :partial => "chatbot/chat" %>
 </div>
 <div class="showChat">
-  <i class="fa fa-comment-o" aria-hidden="true"></i> Need help???
+  <i class="fa fa-comment-o" aria-hidden="true"></i> Contact us!
 </div>
 <% end %>
 
