@@ -20,18 +20,6 @@
 <body>
 
 <body class="<%= params[:controller] %> <%=params[:action]%>">
-  <% unless current_page?(root_path) %>
-<h1 class="chat-header"> Chat with us!<span class="hideChat">hide</span></h1>
-<div class="chat-window">
-  <div class="chat-history"></div>
-</div>
-<div class="chat-input">
-  <%= render :partial => "chatbot/chat" %>
-</div>
-<div class="showChat">
-  <i class="fa fa-comment-o" aria-hidden="true"></i> Contact us!
-</div>
-<% end %>
 
 <div class='spacer'></div>
   <div>
@@ -42,6 +30,17 @@
     <p class="alert alert-danger text-center msg"><%= alert %></p>
   <% end %>
   </div>
+
+<script type="text/javascript">
+    window.__be = window.__be || {};
+    window.__be.id = "637b24ef6fd6ba0007e2d43c";
+    (function() {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+</script>
+<!-- End of ChatBot code -->
 <%= yield %>
 </body>
 </html>
