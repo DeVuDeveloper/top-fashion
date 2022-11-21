@@ -20,9 +20,9 @@ before_action :set_order, only: [:create]
    
 
     if @line_item.save
-      flash[:msg] = "Item added to the cart."
+      redirect_to order_path(:id => @order.id)
     else
-      flash[:error] = "Could not add item to the cart."
+      flash[:alert] = "Could not add item to the cart."
     end
   end
 

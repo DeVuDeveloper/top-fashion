@@ -1,9 +1,7 @@
 <%=  render :partial => 'layouts/navbarInner' %>
 
-
 <section class="product-container">
  
-  <!-- Left Column / Headphones Image -->
   <div class="left-product">
    <%= cl_image_tag(@product.attachment.key, :type => :upload, class: "active" )  %>
   </div>

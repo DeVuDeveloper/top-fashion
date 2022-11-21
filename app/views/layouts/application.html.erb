@@ -19,18 +19,12 @@
 
 </head>
 <body>
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
+
 
 
 <body class="<%= params[:controller] %> <%=params[:action]%>">
 
-<div class="wrapper">
-  <%= yield %>
-</div>
+
 
 <% unless current_page?(root_path) %>
 <h1 class="chat-header">Need help???<span class="hideChat">hide</span></h1>
@@ -46,7 +40,14 @@
 <% end %>
 
 <div class='spacer'></div>
-
-
+  <div>
+  <% if notice %>
+    <h6 class="alert alert-success text-center msg"><%= flash[:notice]%></h6>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger text-center msg"><%= alert %></p>
+  <% end %>
+  </div>
+<%= yield %>
 </body>
 </html>

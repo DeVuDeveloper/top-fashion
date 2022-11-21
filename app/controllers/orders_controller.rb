@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
     session[:order_id] = nil
 
     respond_to do |format|
-      format.html {redirect_to root_path, notice: 'Your cart is currently empty'}
+      format.html {redirect_to root_path}
     end
 
     # redirect_to shop_path

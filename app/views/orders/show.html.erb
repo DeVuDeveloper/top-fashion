@@ -24,8 +24,8 @@
    	   	  </div>
    	   	  <div class="prices">
    	   	  	<div class="amount"><%= number_to_currency(item.product.cost) %></div>
-   	   	  	<div class="save"><u>Save for later</u></div>
-   	   	  	<div class="remove"><u><%= link_to 'Remove', lineitem_destroy_path(item.id), :method => 'delete' %></u></div>
+   	   	 
+   	   	  	<div class="remove-b"><%= link_to 'Remove', lineitem_destroy_path(item.id), :method => 'delete' %></div>
    	   	  </div>
           </div>
 <% end %>
