@@ -209,7 +209,7 @@
   transition: all 0.5s;
 }
 
-.review-btn {
+.review-button {
   display: inline-block;
   background-color: #7dc855;
   border-radius: 6px;
@@ -218,7 +218,7 @@
   text-decoration: none;
   padding: 8px 10px;
   transition: all 0.5s;
-  border: none;
+  width:120px;
   margin-top: 10px;
 }
 
