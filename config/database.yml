@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: top_shop_production
-  username: top_shop
-  password: <%= ENV["TOP_SHOP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
