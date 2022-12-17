@@ -33,7 +33,7 @@ E-commerce with animations, list of products by category, men's and women's prod
 
 ## Live Demo
 
-([Heroku link](https://dejan-top-fashion.herokuapp.com/))
+([Live Preview](https://top-fashion-dejan.up.railway.app/))
 
 ## Getting Started 🏁
 
