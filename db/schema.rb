@@ -93,7 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_145452) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "name"
- 
+    t.text "images", default: [], array: true
   end
 
   create_table "reviews", force: :cascade do |t|
